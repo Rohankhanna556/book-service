@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sunka.book.entity.Book;
+import com.sunka.book.model.BookModel;
 import com.sunka.book.service.BookService;
 
 @RestController
@@ -32,12 +33,12 @@ public class BookController {
     }
 
     @PostMapping
-    public Book createBook(@RequestBody Book book) {
+    public Book createBook(@RequestBody BookModel book) {
         return bookService.createBook(book);
     }
 
     @PutMapping("/{id}")
-    public Book updateBook(@PathVariable Long id, @RequestBody Book book) {
+    public Book updateBook(@PathVariable Long id, @RequestBody BookModel book) {
         return bookService.updateBook(id, book);
     }
 

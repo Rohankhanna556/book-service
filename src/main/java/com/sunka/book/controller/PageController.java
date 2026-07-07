@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sunka.book.entity.Page;
+import com.sunka.book.model.PageModel;
 import com.sunka.book.service.PageService;
 
 @RestController
@@ -32,12 +33,12 @@ public class PageController {
     }
 
     @PostMapping
-    public Page createPage(@RequestBody Page page) {
+    public Page createPage(@RequestBody PageModel page) {
         return pageService.createPage(page);
     }
 
     @PutMapping("/{pageId}")
-    public Page updatePage(@PathVariable Long pageId, @RequestBody Page page) {
+    public Page updatePage(@PathVariable Long pageId, @RequestBody PageModel page) {
         return pageService.updatePage(pageId, page);
     }
 

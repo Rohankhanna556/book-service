@@ -2,5 +2,7 @@ package com.sunka.book.dto;
 
 import java.time.LocalDate;
 
-public record BookDTO(Long bookId, String title, String visibility, int views, int popularity, LocalDate createdAt, String cover) {}
+import com.sunka.book.enums.BookVisibility;
+
+public record BookDTO(Long bookId, String title, BookVisibility visibility, int views, int popularity, LocalDate createdAt, String coverLink) {}
 

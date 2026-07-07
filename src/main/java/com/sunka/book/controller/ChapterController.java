@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sunka.book.entity.Chapter;
+import com.sunka.book.model.ChapterModel;
 import com.sunka.book.service.ChapterService;
 
 @RestController
@@ -32,12 +33,12 @@ public class ChapterController {
     }
 
     @PostMapping
-    public Chapter createChapter(@RequestBody Chapter chapter) {
+    public Chapter createChapter(@RequestBody ChapterModel chapter) {
         return chapterService.createChapter(chapter);
     }
 
     @PutMapping("/{chapterId}")
-    public Chapter updateChapter(@PathVariable Long chapterId, @RequestBody Chapter chapter) {
+    public Chapter updateChapter(@PathVariable Long chapterId, @RequestBody ChapterModel chapter) {
         return chapterService.updateChapter(chapterId, chapter);
     }
 
