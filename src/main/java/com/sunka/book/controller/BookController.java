@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sunka.book.entity.Book;
+import com.sunka.book.dto.BookDTO;
 import com.sunka.book.model.BookModel;
 import com.sunka.book.service.BookService;
 
@@ -23,22 +23,22 @@ public class BookController {
     private BookService bookService;
 
     @GetMapping
-    public List<Book> getBooks() {
+    public List<BookDTO> getBooks() {
         return bookService.getAllBooks();
     }
 
     @GetMapping("/{id}")
-    public Book getBook(@PathVariable Long id) {
+    public BookDTO getBook(@PathVariable Long id) {
         return bookService.getBook(id);
     }
 
     @PostMapping
-    public Book createBook(@RequestBody BookModel book) {
+    public BookDTO createBook(@RequestBody BookModel book) {
         return bookService.createBook(book);
     }
 
     @PutMapping("/{id}")
-    public Book updateBook(@PathVariable Long id, @RequestBody BookModel book) {
+    public BookDTO updateBook(@PathVariable Long id, @RequestBody BookModel book) {
         return bookService.updateBook(id, book);
     }
 

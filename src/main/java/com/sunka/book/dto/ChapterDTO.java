@@ -1,4 +1,6 @@
 package com.sunka.book.dto;
 
-public record ChapterDTO(Long chapterId, String title, String pdfUrl) {}
+import java.time.LocalDate;
+
+public record ChapterDTO(Long chapterId, String title, LocalDate createdAt) {}
 

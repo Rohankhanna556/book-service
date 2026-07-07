@@ -10,35 +10,36 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sunka.book.entity.Page;
+import com.sunka.book.dto.PageDTO;
 import com.sunka.book.model.PageModel;
 import com.sunka.book.service.PageService;
 
 @RestController
-@RequestMapping("/api/books/{bookId}/chapters/{chapterId}/pages")
+@RequestMapping("/api/pages")
 public class PageController {
     @Autowired
     private PageService pageService;
 
     @GetMapping
-    public List<Page> getPages(@PathVariable Long chapterId) {
+    public List<PageDTO> getPages(@RequestParam("chapterId") Long chapterId) {
         return pageService.getPages(chapterId);
     }
 
     @GetMapping("/{pageId}")
-    public Page getPage(@PathVariable Long pageId) {
+    public PageDTO getPage(@PathVariable Long pageId) {
         return pageService.getPage(pageId);
     }
 
     @PostMapping
-    public Page createPage(@RequestBody PageModel page) {
+    public PageDTO createPage(@RequestBody PageModel page) {
         return pageService.createPage(page);
     }
 
     @PutMapping("/{pageId}")
-    public Page updatePage(@PathVariable Long pageId, @RequestBody PageModel page) {
+    public PageDTO updatePage(@PathVariable Long pageId, @RequestBody PageModel page) {
         return pageService.updatePage(pageId, page);
     }
 

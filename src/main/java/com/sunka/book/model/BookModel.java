@@ -2,6 +2,8 @@ package com.sunka.book.model;
 
 import com.sunka.book.enums.BookVisibility;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -9,6 +11,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @RequiredArgsConstructor
+@AllArgsConstructor
+@Builder
 public class BookModel {
 
 	private String title;
