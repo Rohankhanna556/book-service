@@ -16,7 +16,7 @@ public class PageService {
     public List<Page> getPages(Long chapterId) {
         return pageRepository.findAll()
                 .stream()
-                .filter(p -> p.getChapter().getChapterId().equals(chapterId))
+                .filter(p -> p.getChapter().getId().equals(chapterId))
                 .toList();
     }
 

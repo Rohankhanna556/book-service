@@ -1,4 +1,4 @@
-package com.sunka.book.entity.dto;
+package com.sunka.book.dto;
 
 import java.time.LocalDate;
 

@@ -16,7 +16,7 @@ public class ChapterService {
     public List<Chapter> getChapters(Long bookId) {
         return chapterRepository.findAll()
                 .stream()
-                .filter(c -> c.getBook().getBookId().equals(bookId))
+                .filter(c -> c.getBook().getId().equals(bookId))
                 .toList();
     }
 
