@@ -8,9 +8,9 @@ import io.swagger.v3.oas.annotations.info.Info;
 @Configuration
 @OpenAPIDefinition(
     info = @Info(
-        title = "User API",
+        title = "Book Service APIs",
         version = "1.0",
-        description = "API documentation for User service"
+        description = "API documentation for Book service"
     )
 )
 public class SwaggerConfig {
