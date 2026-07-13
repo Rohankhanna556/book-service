@@ -1,7 +1,5 @@
 package com.sunka.book.dto;
 
-import java.time.LocalDateTime;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,11 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CommentDTO {
+public class RatingDTO {
     private Long id;
-    private String commentBy;
-    private String text;
-    private LocalDateTime createdAt;
+    private String ratedBy;
+    private Integer score;
     private Long bookId;
-    private Long chapterId;
 }

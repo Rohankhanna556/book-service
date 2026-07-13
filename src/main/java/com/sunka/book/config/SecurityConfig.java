@@ -19,10 +19,11 @@ public class SecurityConfig {
                     "/v3/api-docs/**",
                     "/api-docs/**"
                 ).permitAll()
-                // Book APIs require authentication
-                .requestMatchers("/api/books", "/api/books/**").authenticated()
-                .requestMatchers("/api/chapters", "/api/chapters/**").authenticated()
-                .requestMatchers("/api/pages", "/api/pages/**").authenticated()
+                // Book, Chapter, and Page APIs are public
+                .requestMatchers("/api/books", "/api/books/**").permitAll()
+                .requestMatchers("/api/chapters", "/api/chapters/**").permitAll()
+                .requestMatchers("/api/pages", "/api/pages/**").permitAll()
+                // Any other request requires authentication
                 .anyRequest().authenticated()
             )
             .httpBasic(httpBasic -> httpBasic.disable())
@@ -31,4 +32,3 @@ public class SecurityConfig {
         return http.build();
     }
 }
-

@@ -23,6 +23,7 @@ public class PageController {
     @Autowired
     private PageService pageService;
 
+    // ✅ Readers can view
     @GetMapping
     public List<PageDTO> getPages(@RequestParam("chapterId") Long chapterId) {
         return pageService.getPages(chapterId);
@@ -33,6 +34,7 @@ public class PageController {
         return pageService.getPage(pageId);
     }
 
+    // ✅ Admins manage
     @PostMapping
     public PageDTO createPage(@RequestBody PageModel page) {
         return pageService.createPage(page);

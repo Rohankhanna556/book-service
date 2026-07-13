@@ -1,7 +1,5 @@
 package com.sunka.book.entity;
 
-import java.time.LocalDateTime;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,41 +10,27 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "comment")
+@Table(name = "favorite")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Comment {
+public class Favorite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
-    
-    @Column(name = "comment_by")
-    private String commentBy;
-    
-    @Column(name = "text")
-    private String text;
-    
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
 
-    @EqualsAndHashCode.Exclude
+    // Which user favorited the book
+    @Column(name = "username", nullable = false)
+    private String username;
+
     @ManyToOne
-    @JoinColumn(name = "book_id")
+    @JoinColumn(name = "book_id", nullable = false)
     private Book book;
-    
-    @ManyToOne
-    @JoinColumn(name = "chapter_id")
-    private Chapter chapter;
-
 }
-

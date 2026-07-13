@@ -57,4 +57,13 @@ public class Book {
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private List<Chapter> chapters;
+    
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+    private List<Rating> ratings;
+    
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+    private List<Favorite> favorites;
+
 }
