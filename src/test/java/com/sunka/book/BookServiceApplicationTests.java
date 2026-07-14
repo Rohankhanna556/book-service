@@ -1,4 +1,4 @@
-package com.sunka.book_service;
+package com.sunka.book;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
